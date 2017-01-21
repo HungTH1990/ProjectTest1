@@ -15,8 +15,8 @@ namespace WebAPIMVCAngular
 
             routes.MapRoute(
                 name: "Default",
-                url: "{api}/{action}/{id}",
-                defaults: new { action = "Products", id = UrlParameter.Optional }
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

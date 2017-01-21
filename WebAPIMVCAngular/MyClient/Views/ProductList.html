@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body ng-app="ProductApp">
+    <div ng-controller="ProductController">
+        <table ng-repeat="product in products" border="1">
+            <tr>
+                <td>{{product.id}}</td>
+                <td>{{product.Name}}</td>
+                <td>{{product.Price}}</td>
+            </tr>
+        </table>
+     </div>
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script>
+    var app = angular.module("ProductApp", []);
+    app.controller("ProductController", function ($scope, $http) {
+        $http.get('http://localhost:63517/api/products').
+        success(function (data, satus, headers, config) {
+            $scope.products = data;
+        }).
+        error(function (data, status, headers, config) {
+            alert("erro");
+        });
+    });
+</script>

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div ng-app="validationApp" ng-controller="mainController">
+        <form name="submit" ng-submit="submitForm()" novalidate>
+            <div>
+                ID: </br>
+                <input name="id" ng-model="id" ng-required="true" type="number">
+                <span class="error" ng-show="submit.id.$error.required">required</span>
+                <span class="valid" ng-show="submit.id.$valid">OK</span>
+            </div></br>
+            <div>
+                Name:</br>
+                <input name="name" ng-model="name" ng-minlength="2" ng-maxlength="20" ng-required="true" type="text">
+                <span class="error" ng-show="submit.name.$error.required">required</span>
+                <span class="error" ng-show="submit.name.$error.maxlength">word must be less than 20 char</span>
+                <span class="error" ng-show="submit.name.$error.minlength">word must be more than 2 char</span>
+                <span class="valid" ng-show="submit.name.$valid">OK</span>
+            </div></br>
+            <div>
+                Price:</br>
+                <input name="price" ng-model="price" ng-minlength="2" ng-maxlength="30" ng-required="true" type="text">
+                <span class="error" ng-show="submit.price.$error.required">required</span>
+                <span class="error" ng-show="submit.price.$error.maxlength">word must be less than 30 char</span>
+                <span class="error" ng-show="submit.price.$error.minlength">word must be more than 2 char</span>
+                <span class="valid" ng-show="submit.price.$valid">OK</span>
+            </div></br>
+            <div><button type="submit" ng-disabled="userForm.$invalid">>Add To Product</button></div>
+        </form>
+    </div>
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script>
+    var validationApp = angular.module('validationApp', []);
+
+    // create angular controller
+    validationApp.controller('mainController', function ($scope) {
+
+        // function to submit the form after all validation has occurred
+        $scope.submitForm = function () {
+
+            // check to make sure the form is completely valid
+            if ($scope.submit.$valid) {
+                alert('Tiếp..........');
+            }
+
+        };
+
+    });
+</script>
