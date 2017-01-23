@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UglyToad.FakeItEasy.EntityFrameworkFakes</name>
+    </assembly>
+    <members>
+        <member name="T:UglyToad.FakeItEasy.EntityFrameworkFakes.ContextFaker">
+            <summary>
+            Class containing utility methods for faking the EntityFramework DbContext and DbSet.
+            </summary>
+        </member>
+        <member name="M:UglyToad.FakeItEasy.EntityFrameworkFakes.ContextFaker.CreateContext``1">
+            <summary>
+            Create a fake context of the given type.
+            </summary>
+            <typeparam name="T">The type of the context to fake.</typeparam>
+            <returns>The faked DbContext of type T.</returns>
+        </member>
+        <member name="M:UglyToad.FakeItEasy.EntityFrameworkFakes.ContextFaker.AddIdGetterForType``1(System.Func{``0,System.Object})">
+            <summary>
+            Configure the property to access when calling DbSet.Find() for a given type of entity.
+            </summary>
+            <typeparam name="T">The type of entity this find method corresponds to.</typeparam>
+            <param name="func">The func for accessing the property of an entity.</param>
+        </member>
+        <member name="M:UglyToad.FakeItEasy.EntityFrameworkFakes.ContextFaker.ContextReturnsDbSet``1(System.Linq.Expressions.Expression{System.Func{System.Data.Entity.DbSet{``0}}},System.Collections.Generic.List{``0})">
+            <summary>
+            Configure a fake DbSet for the given context DbSet. The DbSet uses the data passed in.
+            </summary>
+            <typeparam name="T">The type of the entity for this DbSet.</typeparam>
+            <param name="dbSetAccessor">The func for accessing the DbSet from the context.</param>
+            <param name="data">The list of data this DbSet will use for add/remove/query operations. Be aware this list will be modified by operations against the DbSet.</param>
+        </member>
+    </members>
+</doc>
