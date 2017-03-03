@@ -1,14 +1,1 @@
-21.01.2017
-Web API:
-- Co ch? truy?n gi?a Model v?i Controller hoàn toàn gi?ng v?i MVC.
-- Co ch? truy?n gi?a Controller v?i View thì l?i khác. Có th? dùng Angular d? l?y k?t qu? tr? v? c?a m?t Controler. Và t? dó phân tích d? l?y k?t qu? cho View.
-- N?u trong m?t trang ?ng d?ng có 2 Project. Project1 mu?n truy c?p l?y k?t qu? c?a Project 2 thì trong Web.config c?a Project 2 thì ph?i thi?t lâp:
-<system.webServer>
-    <httpProtocol>
-      <customHeaders>
-        <add name="Access-Control-Allow-Origin" value="http://localhost:28980......" />
-      </customHeaders>
-    </httpProtocol>
-  </system.webServer>
-
-Postman
+master strating...
