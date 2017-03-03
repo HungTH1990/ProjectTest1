@@ -1,6 +1,11 @@
 HMGNV-WCYXV-X7G9W-YCX63-B98R2
 HMGNV-WCYXV-X7G9W-YCX63-B98R2
 03/03/2017
+<<<<<<< HEAD
 develop second
 1
 2
+=======
+myfeaturesecond stating
+1
+>>>>>>> myfeaturesecond
